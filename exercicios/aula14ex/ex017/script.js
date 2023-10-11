@@ -12,18 +12,48 @@ function contar() {
     } else {
         if (p == 0) {
             window.alert('Passo inválido! Considerando PASSO 1')
-            p = 1
-            res.innerHTML = ''
-            for (var c = i; c <= f; c += p) {
-                res.innerHTML += `${c} &#x1F449;`
+            if (p == 0 && i > f) {
+                p = 1 
+                res.innerHTML = ''
+                for (var c = i; c >= f; c -= p) {
+                    res.innerHTML += `${c} &#x1F449;`
+                }
+                res.innerHTML += `&#x1F3C1;`
+            } else if (p == 0 && i < f) {
+                p = 1 
+                res.innerHTML = ''
+                for (var c = i; c <= f; c += p) {
+                    res.innerHTML += `${c} &#x1F449;`
+                }
+                res.innerHTML += `&#x1F3C1;`
+            } else {
+                p = 1 
+                res.innerHTML = ''
+                for (var c = i; c <= f; c += p) {
+                    res.innerHTML += `${c} &#x1F449;`
+                }
+                res.innerHTML += `&#x1F3C1;`
             }
-            res.innerHTML += `&#x1F3C1;`
         } else {
-            res.innerHTML = ''
-            for (var c = i; c <= f; c += p) {
-                res.innerHTML += `${c} &#x1F449; `
+            if (i > f) {
+                res.innerHTML = ''
+                for (var c = i; c >= f; c -= p) {
+                    res.innerHTML += `${c} &#x1F449;`
+                }
+                res.innerHTML += `&#x1F3C1;`
+            } else if (i < f) {
+                res.innerHTML = ''
+                for (var c = i; c <= f; c += p) {
+                    res.innerHTML += `${c} &#x1F449;`
+                }
+                res.innerHTML += `&#x1F3C1;`
+            } else { 
+                res.innerHTML = ''
+                for (var c = i; c <= f; c += p) {
+                    res.innerHTML += `${c} &#x1F449;`
+                }
+                res.innerHTML += `&#x1F3C1;`
             }
-            res.innerHTML += `&#x1F3C1;`
         }
     }
-} 
+}
