@@ -57,4 +57,4 @@ function finalizar() {
         media.innerHTML = `A média dos valores digitados é ${soma / valores.length}.`
         res.appendChild(media) // Mostrar resultado da divisão
     }
-}
+} 
