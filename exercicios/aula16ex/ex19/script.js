@@ -24,12 +24,6 @@ function finalizar() {
     } else { // Aqui vai o resultado dos números cadastrados
         var res = document.getElementById('res')
         res.innerHTML = ''
-        function ordenarArray (valores) { // Ordenar os valores do array, do menor para o maior
-            valores.sort(function(a,b) {
-                return a - b
-            })
-        } 
-        ordenarArray(valores) 
         // Parágrafos para exibir o resultado dos números adicionados
         var cad = document.createElement('p')
         var maior = document.createElement('p')
@@ -38,10 +32,21 @@ function finalizar() {
         var media = document.createElement('p')
         cad.innerHTML = `Ao todo, temos ${valores.length} números cadastrados.`
         res.appendChild(cad) // Mostrar quantos números foram cadastrados
-        
-        maior.innerHTML = `O maior valor informado foi ${valores[valores.length - 1]}.`
+        var vMaior = 0
+        for (let pos in valores) { // Pecorrer array e pegar o maior número
+            if (valores[pos] > vMaior) {
+                vMaior = valores[pos]
+            }
+        }
+        maior.innerHTML = `O maior valor informado foi ${vMaior}.`
         res.appendChild(maior) // Mostrar maior número adicionado
-        menor.innerHTML = `O menor valor informado foi ${valores[0]}.`
+        var vMenor = 100
+        for (let pos in valores) { // Pecorrer array e pegar o menor número
+            if (valores[pos] < vMenor) {
+                vMenor = valores[pos]
+            }
+        }
+        menor.innerHTML = `O menor valor informado foi ${vMenor}.`
         res.appendChild(menor) // Mostrar menor número adicinado
         var soma = 0
         for (var pos in valores) { // Percorrer dentro do array e somar todos os valores
